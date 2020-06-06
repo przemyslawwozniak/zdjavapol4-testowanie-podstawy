@@ -31,24 +31,45 @@ public class ProductRatingTest {
     }
 
     //1
-    @Test
+    @Test //given-when-then
     public void user_provides_5_and_rating_is_set_to_5() {
+        //given: //jakie sa warunki poczatkowe testu
+        //zainicjalizowany obiekt ProductRating (pole klasy testowej)
 
+        //when: //jakie zmiany aplikujecie do testowanego obiektu
+        pr.setScore(5);
+
+        //then: //opisuje oczekiwany rezultat
+        assertEquals("ProductRating's score should be set to 5 on user input: 5.",  5, pr.getScore());
     }
     //1
     @Test
     public void user_provides_1_and_rating_is_set_to_1() {
+        //given:
 
+        //when:
+        pr.setScore(1);
+
+        //then:
+        assertEquals("ProductRating's score should be set to 1 on user input: 1.",  1, pr.getScore());
     }
     //2a
     @Test
     public void user_provides_6_and_rating_is_set_to_5() {
+        //when:
+        pr.setScore(6);
 
+        //then:
+        assertEquals("ProductRating's score should be set to 5 on user input: 6.",  5, pr.getScore());
     }
     //2b
     @Test
     public void should_set_rating_to_1_when_user_provides_0() {
+        //when:
+        pr.setScore(0);
 
+        //then:
+        assertEquals("ProductRating's score should be set to 1 on user input: 0.",  1, pr.getScore());
     }
 
 }
